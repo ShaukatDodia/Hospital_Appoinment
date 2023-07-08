@@ -80,7 +80,7 @@ else{
                 
                 <%
                     Class.forName("com.mysql.jdbc.Driver");
-                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_data", "root", "");
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/h_d", "root", "");
                     Statement st = con.createStatement();
                     
                     ResultSet rs2 = st.executeQuery("Select uname from user_details where uemail = '"+stat.toString()+"' ");
@@ -105,7 +105,7 @@ else{
             </div>
             </div>
         <%
-              Connection con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_data", "root", "");
+              Connection con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/h_d", "root", "");
              Statement st2 = con2.createStatement();
             
             ResultSet rs = st2.executeQuery("select * from user_profile where Email='"+stat+"'");

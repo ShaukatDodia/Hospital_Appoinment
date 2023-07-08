@@ -34,14 +34,14 @@ public class RegistrationServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_data","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/h_d","root","");
             
            
             String regname =request.getParameter("name");
             String regpwd = request.getParameter("pass");
             String regemail= request.getParameter("email");
             String regmo = request.getParameter("contact");
-            
+            String repass= request.getParameter("re_pass");
             PreparedStatement pst=con.prepareStatement("insert into user_details(uname,upwd,uemail,umobile) values(?,?,?,?)");
             pst.setString(1, regname);
             pst.setString(2,regpwd);

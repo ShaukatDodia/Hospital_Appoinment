@@ -37,7 +37,7 @@ public class DeleteServlet extends HttpServlet {
             
             Class.forName("com.mysql.jdbc.Driver");
             String MAIL = request.getParameter("Mail");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_data", "root", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/h_d", "root", "");
             Statement st = con.createStatement();
             int res = st.executeUpdate("delete from user_profile where Email = '"+MAIL+"'");
             

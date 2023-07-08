@@ -33,7 +33,7 @@ public class updateServlet extends HttpServlet {
             
             
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_data", "root", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/h_d", "root", "");
             Statement st = con.createStatement();
             
             

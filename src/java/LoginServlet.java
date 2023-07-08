@@ -45,7 +45,7 @@ public class LoginServlet extends HttpServlet {
             String password = request.getParameter("upwd");
 
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_data", "root", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/h_d", "root", "");
 
             PreparedStatement pst =(PreparedStatement) con.prepareStatement("SELECT * FROM user_details WHERE uemail = ? and upwd = ?");
             pst.setString(1, name);

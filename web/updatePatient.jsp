@@ -84,7 +84,7 @@
                 
                 <%
                     Class.forName("com.mysql.jdbc.Driver");
-                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_data", "root", "");
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/h_d", "root", "");
                     Statement st = con.createStatement();
                     
                     ResultSet rs = st.executeQuery("Select uname from user_details where uemail = '"+request.getParameter("Mail")+"' ");

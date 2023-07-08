@@ -9,12 +9,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-   
+
     <head>
-        
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registration form</title>
-         <%@include file = "Allcss.jsp" %>
+        <%@include file = "Allcss.jsp" %>
+      
     </head>
     <body >
 
@@ -33,32 +34,32 @@
                         </div>
                     </div>
                     <div class="signup-form" >
-                        <form method="post" action="RegistrationServlet" class="register-form" id="register-form" style="text-align: center;">
+                        <form name="jss" method="post" action="RegistrationServlet" class="register-form" id="register-form" style="text-align: center;">
                             <h2 class="form-title">Registration</h2>
                             <div class="form-group">  
                                 <img src="Images/icons8-administrator-male-48.png" alt=""/>
-                                <input type="text" name="name" id="sub1" placeholder="Name"required="">
+                                <input type="text" name="name" id="sub1" placeholder="Name" required="" onsubmit="return take_value()">
 
                             </div>
                             <div class="form-group">
                                 <img src="Images/icons8-gmail-48.png" alt=""/>
-                                <input type="email" name="email" id="sub1" placeholder="Email" required="">
+                                <input type="email" name="email" id="sub1" placeholder="Email" required=""  onsubmit="return take_value()">
 
                             </div>
                             <div class="form-group">
                                 <img src="Images/icons8-lock-48.png" alt=""/>
-                                <input type="password" name="pass" id="sub1" placeholder="Password" required="">
+                                <input type="password" name="pass" id="sub1" placeholder="Password" required="" onsubmit="return take_value()">
                             </div>
                             <div class="form-group">
                                 <img src="Images/icons8-lock-48.png" alt=""/>
-                                <input type="password" name="re_pass" id="sub1" placeholder="Confirm password" required="">
+                                <input type="password" name="re_pass" id="sub1" placeholder="Confirm password" required="" onsubmit="take_value()">
                             </div>
                             <div class="form-group">
                                 <img src="Images/icons8-add-phone-48.png" alt=""/>
-                                <input type="text" name="contact" id="sub1" placeholder="Contact no">
+                                <input type="text" name="contact" id="sub1" placeholder="Contact no" onclick="return take_value()" >
                             </div>
                             <div class="form-group2">
-                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term"> <label for="agree-term" class="label-agree-term"><span><span></span></span>I
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" onsubmit="return take_value()"> <label for="agree-term" class="label-agree-term"><span><span></span></span>I
                                     agree all statements in <a href="#" class="term-service">Terms
                                         of service</a></label>
                             </div>
@@ -72,11 +73,17 @@
         </div>
 
 
+    <script>
+            function take_value() {
+                let x = document.forms["jss"]["name", "email", "pass", "re_pass", "agree-term", "contact"].value;
+                if (x == " ") {
+                    alert("plz Fill all the details");
+                    return false;
+                }
+            }
 
 
-
-
-
+        </script>
 
     </body>
 </html>
